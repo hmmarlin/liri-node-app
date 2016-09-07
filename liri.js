@@ -41,11 +41,14 @@ if (activity === 'my-tweets') {
         for (var i = 0; i < 5; i++) {
             var songInfo = data.tracks.items[i]
 
-            console.log('Option ' + i)
+            var b = (i + 1);
+
+
+            console.log('Option ' + b)
             console.log('Artist: ' + songInfo.artists[0].name)
             console.log('Song Name: ' + songInfo.name);
-            console.log('Preview link: ' + songInfo.preview_url)
             console.log('Album: ' + songInfo.album.name)
+            console.log('Preview link: ' + songInfo.preview_url)
             console.log('------')
 
         }
@@ -57,6 +60,7 @@ if (activity === 'my-tweets') {
         request('http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&r=json&tomatoes=true', function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 console.log('------')
+                console.log('YOU SHOULD WATCH MR NOBODY. ITS ON NETFLIX!!!')
                 console.log("The movie title is: " + JSON.parse(body)["Title"])
                 console.log("The movie year is: " + JSON.parse(body)["Year"])
                 console.log("The IMDB rating is: " + JSON.parse(body)["imdbRating"])
